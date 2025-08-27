@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Secure Task App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Secure Task App</h1>
+    <p id="status">Chargement…</p>
+  </header>
+
+  <section id="auth-section">
+    <h2>Authentification</h2>
+    <div class="panels">
+      <form id="register-form">
+        <h3>Inscription</h3>
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Mot de passe" required />
+        <button>S'inscrire</button>
+        <pre class="result" data-for="register"></pre>
+      </form>
+      <form id="login-form">
+        <h3>Connexion</h3>
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Mot de passe" required />
+        <button>Se connecter</button>
+        <pre class="result" data-for="login"></pre>
+      </form>
+    </div>
+  </section>
+
+  <section id="tasks-section" class="hidden">
+    <h2>Tâches</h2>
+    <form id="task-form">
+      <input name="title" placeholder="Titre" required />
+      <input name="description" placeholder="Description" />
+      <button>Ajouter</button>
+    </form>
+    <ul id="task-list"></ul>
+  </section>
+
+  <footer>
+    <small>Frontend minimal statique • <span id="year"></span></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

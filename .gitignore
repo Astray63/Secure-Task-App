@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Env
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Docker
+.docker/
+
+# Coverage / tests
+coverage/
+
+# Misc
+.DS_Store

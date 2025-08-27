@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    container_name: secure-task-api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - tasknet
+    security_opt:
+      - no-new-privileges:true
+    read_only: false
+  db:
+    image: mysql:8.4
+    container_name: task-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_change_me
+      MYSQL_DATABASE: task_app
+      MYSQL_USER: task_user
+      MYSQL_PASSWORD: change_me
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    command: ["mysqld", "--mysql-native-password=ON", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    networks:
+      - tasknet
+volumes:
+  db_data:
+networks:
+  tasknet:
+    driver: bridge
