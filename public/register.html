@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inscription - Secure Task App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">Secure Task App</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Accueil</a>
+        <a href="/login.html" class="nav-link">Connexion</a>
+        <a href="/register.html" class="nav-link active">Inscription</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Inscription</h1>
+        <p class="auth-subtitle">Créez votre compte</p>
+        
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Mot de passe sécurisé" required />
+            <small class="form-hint">Au moins 8 caractères avec majuscules, minuscules et chiffres</small>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full">S'inscrire</button>
+        </form>
+        
+        <div class="auth-result">
+          <pre id="register-result" class="result hidden"></pre>
+        </div>
+        
+        <div class="auth-footer">
+          <p>Déjà un compte ? <a href="/login.html">Se connecter</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>Secure Task App • <span id="year"></span></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

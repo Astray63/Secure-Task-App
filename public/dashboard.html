@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tableau de bord - Secure Task App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">Secure Task App</a>
+      <div class="nav-links">
+        <a href="/dashboard.html" class="nav-link active">Tableau de bord</a>
+        <button id="logout-btn" class="btn btn-small">Déconnexion</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h1>Mes Tâches</h1>
+      <div class="user-info">
+        <span id="user-email">Utilisateur connecté</span>
+      </div>
+    </div>
+
+    <section class="task-creation">
+      <div class="card">
+        <h2>Nouvelle tâche</h2>
+        <form id="task-form" class="task-form">
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="title">Titre</label>
+              <input type="text" id="title" name="title" placeholder="Titre de la tâche" required />
+            </div>
+            <div class="form-group flex-2">
+              <label for="description">Description</label>
+              <input type="text" id="description" name="description" placeholder="Description (optionnelle)" />
+            </div>
+            <div class="form-group">
+              <label>&nbsp;</label>
+              <button type="submit" class="btn btn-primary">Ajouter</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="task-list-section">
+      <div class="card">
+        <div class="task-header">
+          <h2>Mes tâches</h2>
+          <div class="task-stats">
+            <span id="task-count">0 tâche(s)</span>
+          </div>
+        </div>
+        
+        <div class="task-filters">
+          <button class="filter-btn active" data-filter="all">Toutes</button>
+          <button class="filter-btn" data-filter="pending">En cours</button>
+          <button class="filter-btn" data-filter="completed">Terminées</button>
+        </div>
+        
+        <ul id="task-list" class="task-list">
+          <li class="no-tasks">Aucune tâche pour le moment</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Secure Task App • <span id="year"></span></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

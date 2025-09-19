@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connexion - Secure Task App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">Secure Task App</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Accueil</a>
+        <a href="/login.html" class="nav-link active">Connexion</a>
+        <a href="/register.html" class="nav-link">Inscription</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Connexion</h1>
+        <p class="auth-subtitle">Connectez-vous à votre compte</p>
+        
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Votre mot de passe" required />
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
+        </form>
+        
+        <div class="auth-result">
+          <pre id="login-result" class="result hidden"></pre>
+        </div>
+        
+        <div class="auth-footer">
+          <p>Pas encore de compte ? <a href="/register.html">S'inscrire</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>Secure Task App • <span id="year"></span></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

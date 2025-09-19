@@ -54,6 +54,29 @@ curl -X POST http://localhost:3000/api/tasks -H 'Authorization: Bearer <TOKEN>' 
 - `npm start` : production
 - `npm run db:init` : création des tables
 
+### Exécuter en local sans tout Docker
+
+Si vous lancez uniquement Node.js en local (npm run dev) et que vous voyez l'erreur `getaddrinfo ENOTFOUND db`, c'est que `DB_HOST=db` (prévu pour docker-compose) n'est pas résolu.
+
+Deux options rapides:
+
+1) Lancer juste MySQL via Docker et pointer dessus depuis le local
+```bash
+docker compose up -d db
+cp .env.local.example .env.local
+# .env.local définit DB_HOST=127.0.0.1 et DB_PORT=3307
+npm run db:init
+npm run dev
+```
+
+2) Installer MySQL en local et adapter `.env.local` (DB_HOST=127.0.0.1, DB_PORT=3306, utilisateur/mot de passe choisis), puis:
+```bash
+npm run db:init
+npm run dev
+```
+
+Note: l'application charge `.env` puis surcharge avec `.env.local` si présent.
+
 ## Structure
 ```
 src/
@@ -92,7 +115,5 @@ Pour étendre (exemples):
 - Pagination / recherche tâches
 
 ## Période
-Projet réalisé en autonomie: (remplacer) Mars 2024 - Avril 2024.
+Projet réalisé en autonomie.
 
-## Licence
-MIT

@@ -3,47 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Secure Task App</title>
+  <title>Secure Task App - Accueil</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Secure Task App</h1>
-    <p id="status">Chargement…</p>
-  </header>
-
-  <section id="auth-section">
-    <h2>Authentification</h2>
-    <div class="panels">
-      <form id="register-form">
-        <h3>Inscription</h3>
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="password" name="password" placeholder="Mot de passe" required />
-        <button>S'inscrire</button>
-        <pre class="result" data-for="register"></pre>
-      </form>
-      <form id="login-form">
-        <h3>Connexion</h3>
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="password" name="password" placeholder="Mot de passe" required />
-        <button>Se connecter</button>
-        <pre class="result" data-for="login"></pre>
-      </form>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">Secure Task App</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">Accueil</a>
+        <a href="/login.html" class="nav-link">Connexion</a>
+        <a href="/register.html" class="nav-link">Inscription</a>
+      </div>
     </div>
-  </section>
+  </nav>
 
-  <section id="tasks-section" class="hidden">
-    <h2>Tâches</h2>
-    <form id="task-form">
-      <input name="title" placeholder="Titre" required />
-      <input name="description" placeholder="Description" />
-      <button>Ajouter</button>
-    </form>
-    <ul id="task-list"></ul>
-  </section>
+  <main class="main-content">
+    <section class="hero">
+      <h1>Bienvenue sur Secure Task App</h1>
+      <p class="hero-subtitle">Gérez vos tâches de manière sécurisée et efficace</p>
+      <div class="status-indicator">
+        <span id="status">Vérification de l'API...</span>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Fonctionnalités</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>🔒 Sécurisé</h3>
+          <p>Authentification JWT, chiffrement des mots de passe, protection contre les attaques</p>
+        </div>
+        <div class="feature-card">
+          <h3>📝 Gestion de tâches</h3>
+          <p>Créez, modifiez, marquez comme terminées vos tâches personnelles</p>
+        </div>
+        <div class="feature-card">
+          <h3>🚀 Moderne</h3>
+          <p>Interface responsive, API REST, architecture sécurisée</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Commencer maintenant</h2>
+      <div class="cta-buttons">
+        <a href="/register.html" class="btn btn-primary">S'inscrire</a>
+        <a href="/login.html" class="btn btn-secondary">Se connecter</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <small>Frontend minimal statique • <span id="year"></span></small>
+    <small>Secure Task App • <span id="year"></span></small>
   </footer>
 
   <script src="app.js"></script>
